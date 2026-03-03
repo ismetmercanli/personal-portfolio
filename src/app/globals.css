@@ -10,10 +10,160 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-plus-jakarta);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-plus-jakarta), var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Yeşil tonlarında renk değiştiren animasyon */
+@keyframes gradient-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-flow-vertical {
+  0%, 100% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+}
+
+/* Metin: animasyonlu gradient (hero isim vb.) */
+.text-gradient-animate {
+  background: linear-gradient(
+    90deg,
+    #34d399,
+    #2dd4bf,
+    #22d3ee,
+    #2dd4bf,
+    #34d399
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-flow 6s ease-in-out infinite;
+}
+
+/* Buton / arka plan: animasyonlu gradient */
+.bg-gradient-animate {
+  background: linear-gradient(
+    90deg,
+    #059669,
+    #34d399,
+    #2dd4bf,
+    #34d399,
+    #059669
+  );
+  background-size: 200% 100%;
+  animation: gradient-flow 4s ease-in-out infinite;
+}
+
+/* Hover'da animasyonlu border/ring için */
+.border-gradient-animate {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #059669,
+    #34d399,
+    #2dd4bf,
+    #34d399,
+    #059669
+  );
+  background-size: 200% 100%;
+  animation: gradient-flow 5s ease-in-out infinite;
+}
+.border-gradient-animate::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--background, #09090b);
+  z-index: -1;
+}
+
+/* Arka plan: hareketli blur orblar */
+@keyframes orb-float-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -40px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+@keyframes orb-float-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 30px) scale(0.98);
+  }
+  66% {
+    transform: translate(25px, -25px) scale(1.02);
+  }
+}
+
+@keyframes orb-float-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-30px, -30px) scale(1.08);
+  }
+}
+
+.orb-float-1 {
+  animation: orb-float-1 18s ease-in-out infinite;
+}
+.orb-float-2 {
+  animation: orb-float-2 22s ease-in-out infinite;
+}
+.orb-float-3 {
+  animation: orb-float-3 20s ease-in-out infinite;
+}
+
+/* Hero gradient arka planı yavaş animasyon */
+@keyframes hero-gradient-shift {
+  0%, 100% {
+    opacity: 1;
+    background-position: 0% 50%;
+  }
+  50% {
+    opacity: 0.9;
+    background-position: 100% 50%;
+  }
+}
+
+.bg-hero-gradient-animate {
+  background: linear-gradient(
+    120deg,
+    rgba(6, 78, 59, 0.4),
+    rgba(15, 23, 42, 0.6),
+    rgba(6, 95, 70, 0.3),
+    rgba(8, 51, 68, 0.4)
+  );
+  background-size: 200% 200%;
+  animation: hero-gradient-shift 12s ease-in-out infinite;
 }
