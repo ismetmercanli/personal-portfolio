@@ -1,3 +1,5 @@
+![Görsel Açıklaması](path/to/image.png)
+
 <div align="center">
 
 # 🌐 İsmet Mercanlı — Personal Website
