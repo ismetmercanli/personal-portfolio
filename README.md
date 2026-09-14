@@ -1,3 +1,5 @@
+
+
 # İsmet Mercanlı | Personal Website
 
 A personal portfolio website showcasing my background, education, projects, and goals as a Computer Engineering student.
