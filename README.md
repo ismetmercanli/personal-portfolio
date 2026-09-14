@@ -1,4 +1,4 @@
-![Görsel Açıklaması](path/to/image.png)
+![Görsel Açıklaması](Gemini_Generated_Image_7ogib77ogib77ogi.jfif)
 
 <div align="center">
 
